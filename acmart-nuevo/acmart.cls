@@ -1,21 +1,21 @@
 %%
-%% This is file `acmart-tagged.cls',
+%% This is file `acmart.cls',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% acmart.dtx  (with options: `class,tagged')
-%%
+%% acmart.dtx  (with options: `class')
+%% 
 %% IMPORTANT NOTICE:
-%%
+%% 
 %% For the copyright see the source file.
-%%
+%% 
 %% Any modified versions of this file must be renamed
-%% with new filenames distinct from acmart-tagged.cls.
-%%
+%% with new filenames distinct from acmart.cls.
+%% 
 %% For distribution of the original source see the terms
 %% for copying and modification in the file acmart.dtx.
-%%
+%% 
 %% This generated file may be distributed as long as the
 %% original source files, as listed above, are part of the
 %% same distribution. (The sources need not necessarily be
@@ -37,9 +37,9 @@
 %%   Right brace   \}     Tilde         \~}
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{acmart-tagged}
+\ProvidesClass{acmart}
 [2024/12/28 v2.12 Typesetting articles for the Association for Computing Machinery]
-\def\@classname{acmart-tagged}
+\def\@classname{acmart}
 \InputIfFileExists{acmart-preload-hook.tex}{%
   \ClassWarning{\@classname}{%
     I am loading acmart-preload-hook.tex. You are fully responsible
@@ -251,10 +251,6 @@
 \else
  \@ACM@journal@bibstripfalse
 \fi
-\let\@startsection@kernel\@startsection
-\let\@xsect@kernel\@xsect
-\let\@sect@kernel\@sect
-\let\@ssect@kernel\@ssect
 \ifx\ACM@fontsize\@empty
   \ifcase\ACM@format@nr
   \relax % manuscript
@@ -449,7 +445,7 @@
     unless are languages are defined. \MessageBreak
     Please choose the languages in \string\documentclass
     \MessageBreak
-    (e.g. \string\documentclass[languages={spanish}]{acmart}),
+    (e.g. \string\documentclass[languages={french, english}]{acmart}),
     \MessageBreak
     or delete the command.}%
   \fi}
@@ -470,19 +466,104 @@
     command. Please move it!}\fi
   \ACM@lang@check{translatedabstract}%
   \g@addto@macro\@translatedabstracts{\bgroup#1\egroup}}
-\let\@startsection\@startsection@kernel
-\let\@sect\@sect@kernel
-\let\@ssect\@ssect@kernel
-\let\@xsect\@xsect@kernel
+\def\@startsection#1#2#3#4#5#6{%
+  \if@noskipsec \leavevmode \fi
+  \par
+  \@tempskipa #4\relax
+  \@afterindenttrue
+  \ifdim \@tempskipa <\z@
+    \@tempskipa -\@tempskipa \@afterindentfalse
+  \fi
+  \if@nobreak
+    \everypar{}%
+  \else
+    \addpenalty\@secpenalty\addvspace\@tempskipa
+  \fi
+  \@ifstar
+    {\@ssect{#3}{#4}{#5}{#6}}%
+    {\@dblarg{\@sect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+\def\@sect#1#2#3#4#5#6[#7]#8{%
+  \edef\@toclevel{\ifnum#2=\@m 0\else\number#2\fi}%
+  \ifnum #2>\c@secnumdepth
+    \let\@svsec\@empty
+  \else
+    \refstepcounter{#1}%
+    \protected@edef\@svsec{\@seccntformat{#1}\relax}%
+  \fi
+  \@tempskipa #5\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #6{%
+        \@hangfrom{\hskip #3\relax\@svsec}%
+          \interlinepenalty \@M #8\@@par}%
+    \endgroup
+    \csname #1mark\endcsname{#7}%
+    \ifnum #2>\c@secnumdepth \else
+        \@tochangmeasure{\csname the#1\endcsname}%
+    \fi
+    \addcontentsline{toc}{#1}{%
+      \ifnum #2>\c@secnumdepth \else
+        \protect\numberline{\csname the#1\endcsname}%
+      \fi
+      #7}%
+  \else
+    \def\@svsechd{%
+      #6{\hskip #3\relax
+      \@svsec #8}%
+      \csname #1mark\endcsname{#7}%
+      \ifnum #2>\c@secnumdepth \else
+        \@tochangmeasure{\csname the#1\endcsname\space}%
+      \fi
+      \addcontentsline{toc}{#1}{%
+        \ifnum #2>\c@secnumdepth \else
+          \protect\numberline{\csname the#1\endcsname}%
+        \fi
+        #7}}%
+  \fi
+  \@xsect{#5}}
+\def\@xsect#1{%
+  \@tempskipa #1\relax
+  \ifdim \@tempskipa>\z@
+    \par \nobreak
+    \vskip \@tempskipa
+    \@afterheading
+  \else
+    \@nobreakfalse
+    \global\@noskipsectrue
+    \everypar{%
+      \if@noskipsec
+        \global\@noskipsecfalse
+       {\setbox\z@\lastbox}%
+        \clubpenalty\@M
+        \begingroup \@svsechd \endgroup
+        \unskip
+        \@tempskipa #1\relax
+        \hskip -\@tempskipa
+      \else
+        \clubpenalty \@clubpenalty
+        \everypar{}%
+      \fi}%
+  \fi
+  \ignorespaces}
+\def\@ssect#1#2#3#4#5{%
+  \@tempskipa #3\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #4{%
+        \@hangfrom{\hskip #1}%
+          \interlinepenalty \@M #5\@@par}%
+    \endgroup
+  \else
+    \def\@svsechd{#4{\hskip #1\relax #5}}%
+  \fi
+  \@xsect{#3}}
 \def\@seccntformat#1{\csname the#1\endcsname\quad}
 \def\@starttoc#1#2{\begingroup\makeatletter
   \setTrue{#1}%
   \par\removelastskip\vskip\z@skip
   \@startsection{section}\@M\z@{\linespacing\@plus\linespacing}%
     {.5\linespacing}{\centering\contentsnamefont}{#2}%
-\@starttoc@cfgpoint@before{#1}%NEW<<<<<<<<<< (name will change)
   \@input{\jobname.#1}%
-\@starttoc@cfgpoint@after{#1}%NEW<<<<<<<<<<<<  (name will change)
   \if@filesw
     \@xp\newwrite\csname tf@#1\endcsname
     \immediate\@xp\openout\csname tf@#1\endcsname \jobname.#1\relax
@@ -2847,12 +2928,6 @@
 \def\@typesetengagemetadata{%
   \def\@setengagemetadata##1##2{\par\noindent\textbf{##1} ##2\par}%
   \@acmengagemetadata}
-\ExplSyntaxOn
-\AddToHook{cmd/maketitle/before}
- {\tagstructbegin{tag=Title}\tagmcbegin{} \tag_stop:}
-\AddToHook{cmd/maketitle/after}
- {\tag_start:\tagmcend\tagstructend }
-\ExplSyntaxOff
 \RequirePackage{fancyhdr}
 \let\ACM@ps@plain\ps@plain
 \let\ACM@ps@myheadings\ps@myheadings
@@ -3513,4 +3588,4 @@
 \normalsize\normalfont\frenchspacing
 \endinput
 %%
-%% End of file `acmart-tagged.cls'.
+%% End of file `acmart.cls'.

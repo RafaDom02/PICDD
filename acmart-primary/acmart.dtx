@@ -392,7 +392,7 @@
 % you encounter problems.   An alternative is the
 % (experimental) option |pbalance|, which uses the new package
 % |pbalance|.  You may want to try |pbalance=true| to see if you get
-% better results.  
+% better results.
 %
 % The option |urlbreakonhyphens| determines whether URLs can be split
 % between lines after hyphens.  By default it is true.  Set it to
@@ -436,7 +436,7 @@
 %
 % The option |language| is used to define the languages for the
 % multi-language papers.  It is discussed in
-% Section~\ref{sec:ug_i13n}. 
+% Section~\ref{sec:ug_i13n}.
 %
 %\subsection{Top matter}
 %\label{sec:ug_topmatter}
@@ -579,7 +579,7 @@
 % processing.
 %
 % If you do not have an ORCID, you may get one for free by
-% registering at \url{http://www.orcid.org/}.  
+% registering at \url{http://www.orcid.org/}.
 %
 %
 % Sometimes an author has several affiliations.  In this case, the
@@ -658,7 +658,7 @@
 % The \cs{affiliation} and \cs{additionalaffiliation} commands are
 % further structured to interact with the metadata extraction tools.
 % Inside these commands you should use the \cs{position},
-% \cs{institution}, \cs{department}, \cs{city}, 
+% \cs{institution}, \cs{department}, \cs{city},
 % \cs{state}, and \cs{country} macros to indicate the
 % corresponding parts of the affiliation.  Note that in some cases
 % (for example, journals) these parts are not printed in the resulting
@@ -876,7 +876,7 @@
 % \begin{verbatim}
 % \acmBadge[http://ctuning.org/ae/ppopp2016.html]{ae-logo}
 % \end{verbatim}
-% The command can be repeated, if a paper has several badges.  
+% The command can be repeated, if a paper has several badges.
 %
 %
 % \DescribeMacro{\startPage}%
@@ -947,7 +947,7 @@
 %
 % \DescribeMacro{\setcopyright}
 % There are several possibilities for the copyright of the papers
-% published by the ACM: the authors may license the paper 
+% published by the ACM: the authors may license the paper
 % to the ACM, some or all authors might be employees of the
 % US or Canadian governments, etc.  Accordingly the command
 % \verb|\setcopyright{...}| is introduced.  Its argument is the
@@ -1216,7 +1216,7 @@
 % \item Results,
 % \item Significance.
 % \end{itemize}
-% 
+%
 % Sometimes the addresses extracted from the authors' data are too
 % long to fit on the page.  In this case the command
 % \cs{authorsaddresses} can be use to override them, for example,
@@ -1224,9 +1224,9 @@
 % \authorsaddresses{Corresponding author: Ben Trovato,
 % \href{mailto:trovato@corporation.com}{trovato@corporation.com};
 % Institute for Clarity in Documentation, P.O. Box 1212, Dublin,
-% Ohio, USA, 43017-6221} 
+% Ohio, USA, 43017-6221}
 % \end{verbatim}
-% 
+%
 % The design of the cover page may require additional runs of latex to
 % make the elements of the page align.
 %
@@ -1242,9 +1242,9 @@
 %
 % To submit these papers you need to set the option |language| in the
 % \cs{documentclass} command.  This option can be repeated, for
-% example, 
+% example,
 % \begin{verbatim}
-% \documentclass[sigconf, language=french, language=english]{acmart}
+% \documentclass[sigconf, language=spanish, language=english]{acmart}
 % \end{verbatim}
 % The last language in the list is the main language of the paper,
 % i.e. the one for the main title, abstract, body, etc.  The other
@@ -1255,11 +1255,11 @@
 % in English and German should use, for example
 % \begin{verbatim}
 % \documentclass[sigconf,
-%                language=german, 
-%                language=english, 
-%                language=french]{acmart}
+%                language=german,
+%                language=english,
+%                language=spanish]{acmart}
 % \end{verbatim}
-% 
+%
 %
 % This key can use any language defined in \textsl{babel}
 % package~\cite{Braams22:Babel} (currently the package is tested with
@@ -1279,7 +1279,7 @@
 % \cs{translatedsubtitle}\marg{language}{subtitle} and
 % \cs{translatedkeywords}{language}{keywords} are used to set title,
 % subtitle and keywords in the secondary language.  For example, a
-% paper in English with French title and abstract may set 
+% paper in English with French title and abstract may set
 % \begin{verbatim}
 % \title{A note on computational complexity}
 % \translatedtitle{french}{Remarque sur la complexit\'e de calcul}
@@ -1300,10 +1300,10 @@
 % \end{verbatim}
 %
 % You can repeat these commands if a paper has more than one secondary
-% language. 
+% language.
 %
 % Use the standard commands (\cs{title}, \cs{subtitle},
-% \cs{keywords}, |abstract|) for the main language of the paper.  
+% \cs{keywords}, |abstract|) for the main language of the paper.
 %
 %\subsection{Algorithms}
 %\label{sec:ug_algorithms}
@@ -1456,7 +1456,7 @@
 %   \theoremstyle{acmdefinition}
 %   \newtheorem{remark}[theorem]{Remark}}
 % \end{verbatim}
-% 
+%
 %
 %\subsection{Online-only and offline-only material}
 %\label{sec:ug_screen}
@@ -1512,7 +1512,7 @@
 % This work was performed at \anon{NSA}.
 % This work was performed at \anon[No Such Agency]{NSA}.
 % \end{verbatim}
-% 
+%
 %
 %\subsection{Acknowledgments}
 %\label{sec:ug_acks}
@@ -1534,7 +1534,7 @@
 %
 % As for the |printonly| and |screenonly| environments,
 % |\begin{acks}| and |\end{acks}| should start on a
-% line of their own with no leading or trailing spaces or comments. 
+% line of their own with no leading or trailing spaces or comments.
 %
 % \DescribeMacro{\grantsponsor}%
 % \DescribeMacro{\grantnum}%
@@ -1789,7 +1789,7 @@
 % \verb|biblatex-software| package, also separately available on CTAN.
 % Look at the \verb|biblatex-software| documentation to learn more about
 % what it offers.
-% 
+%
 % There are a few key differences in how the \LaTeX\ sources are set up
 % when using Bib\LaTeX\ instead of Bib\TeX, that we summarize briefly
 % here (please refer to the official Bib\LaTeX\ documentation for more details).
@@ -1887,12 +1887,12 @@
 % \urldef\tempurl%
 % \url{http://math.tntech.edu/rafal/cliff11/index.html}
 % \showURL{%
-% Retrieved February 28, 2008 from \tempurl} 
+% Retrieved February 28, 2008 from \tempurl}
 % \end{verbatim}
 %
 % Manual bibliographies without these macros may slow down the
 % publication process, and thus are not recommended for ACM
-% submissions. 
+% submissions.
 %
 %\subsection{Other notable packages and typographic remarks}
 %\label{sec:ug_other}
@@ -2228,8 +2228,8 @@
 % \path{sample-acmsmall-tagged.tex}.  If you do this, please \emph{do
 % not ask ACM for support}.  On the other hand, bug reports at
 % \url{https://github.com/borisveytsman/acmart/issues} will be
-% appreciated.  
-% 
+% appreciated.
+%
 %
 %
 % \StopEventually{
@@ -2369,11 +2369,11 @@
 % \changes{1.87}{2022/08/02}{New format: |acmcp|}
 % \changes{1.90a}{2023/06/11}{Changes in the sample keywords and concepts}
 % \changes{1.92}{2023/09/30}{Documentation update: use of `anonymous'
-% throughout} 
+% throughout}
 % \changes{v1.93}{2023/10/22}{Added PACMSE journal option}
 % \changes{v2.01}{2024/01/06}{Documentation update: POMACS uses acmsmall}
 % \changes{v2.03}{2024/02/04}{Added documentation about samples}
-% 
+%
 % And the driver code:
 %    \begin{macrocode}
 %<*gobble>
@@ -2674,7 +2674,7 @@
 %
 % \end{macro}
 %
-% 
+%
 %
 % \begin{macro}{\ACM@languages}
 % \changes{v1.83}{2022/02/19}{Introduced macro}
@@ -2686,7 +2686,7 @@
   \gdef\ACM@languages{english}\fi
   \g@addto@macro\ACM@languages{, #1}}
 %    \end{macrocode}
-% 
+%
 %
 % \end{macro}
 %
@@ -2743,7 +2743,7 @@
 %
 % \end{macro}
 %
-% 
+%
 % \begin{macro}{\if@ACM@sigchiamode}
 %   The formatting of SIGCHI extended abstracts is quite unusual.  We have a
 %   special switch for them.
@@ -2760,7 +2760,7 @@
 \newif\if@ACM@engage
 \@ACM@engagefalse
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{\if@ACM@acmcp}
@@ -2770,10 +2770,10 @@
 \newif\if@ACM@acmcp
 \@ACM@acmcpfalse
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
-% 
+%
 %
 % Setting up switches
 %    \begin{macrocode}
@@ -2887,7 +2887,7 @@
 \let\@ssect@kernel\@ssect
 %    \end{macrocode}
 % \end{macro}
-% 
+%
 %</tagged>
 %
 %
@@ -2915,7 +2915,7 @@
     \def\ACM@fontsize{10pt}%
   \or % acmengage
     \def\ACM@fontsize{10pt}%
-  \or % acmcp  
+  \or % acmcp
     \def\ACM@fontsize{9pt}%
   \fi
 \fi
@@ -2973,7 +2973,7 @@
 \RequirePackage{zref-savepos, zref-user}
 \fi
 %    \end{macrocode}
-% 
+%
 %
 % \begin{macro}{\@ACM@acmcp@delta}
 % \changes{v1.89}{2022/12/25}{Added dimen}
@@ -3120,14 +3120,14 @@
 %\label{sec:i13n}
 %
 %
-% 
+%
 % \changes{v1.83}{2022/02/19}{Use babel for multilanguage papers}
 %    \begin{macrocode}
 \if@ACM@journal
   \renewcommand\keywordsname{Additional Key Words and Phrases}%
 \else
   \renewcommand\keywordsname{Keywords}%
-\fi 
+\fi
 \if@ACM@engage
    \renewcommand\abstractname{Synopsis}%
 \fi
@@ -3139,7 +3139,7 @@
         \renewcommand\keywordsname{Additional Key Words and Phrases}%
       \else
         \renewcommand\keywordsname{Keywords}%
-      \fi 
+      \fi
       \renewcommand\acksname{Acknowledgements}%
       \if@ACM@engage
          \renewcommand\abstractname{Synopsis}%
@@ -3150,7 +3150,7 @@
         \renewcommand\keywordsname{Mots Clés et Phrases Supplémentaires}%
       \else
         \renewcommand\keywordsname{Mots clés}%
-      \fi 
+      \fi
       \renewcommand\acksname{Remerciements}%
   }%
   \addto\captionsgerman{%
@@ -3158,7 +3158,7 @@
         \renewcommand\keywordsname{Zusätzliche Schlagwörter und Phrasen}%
       \else
         \renewcommand\keywordsname{Schlagwörter}%
-      \fi 
+      \fi
       \renewcommand\acksname{Danksagungen}%
   }%
   \addto\captionsspanish{%
@@ -3166,7 +3166,7 @@
         \renewcommand\keywordsname{Palabras y Frases Claves Adicionales}%
       \else
         \renewcommand\keywordsname{Palabras claves}%
-      \fi 
+      \fi
       \renewcommand\acksname{Expresiones de gratitud}%
   }%
 \fi
@@ -3185,7 +3185,7 @@
     unless are languages are defined. \MessageBreak
     Please choose the languages in \string\documentclass
     \MessageBreak
-    (e.g. \string\documentclass[languages={french, english}]{acmart}), 
+    (e.g. \string\documentclass[languages={french, english}]{acmart}),
     \MessageBreak
     or delete the command.}%
   \fi}
@@ -3206,7 +3206,7 @@
 \newcommand\translatedtitle[2]{\ACM@lang@check{\translatedtitle}%
 \g@addto@macro\@translatedtitle{\par\foreignlanguage{#1}{#2}}}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{\@translatedsubtitle}
@@ -3223,7 +3223,7 @@
 \newcommand\translatedsubtitle[2]{\ACM@lang@check{\translatedsubtitle}%
 \g@addto@macro\@translatedsubtitle{\par\foreignlanguage{#1}{#2}}}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{\@translatedkeywords}
@@ -3240,7 +3240,7 @@
 \newcommand\translatedkeywords[2]{\ACM@lang@check{\translatedkeywords}%
 \g@addto@macro\@translatedkeywords{\@mktranslatedkeywords{#1}{#2}}}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{\@translatedabstracts}
@@ -3249,12 +3249,12 @@
 %    \begin{macrocode}
 \def\@translatedabstracts{}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{translatedabstract}
 % \changes{v1.83}{2022/02/20}{Added macro}
-%   We save translated abstracts into \cs{@translatedabstracts} 
+%   We save translated abstracts into \cs{@translatedabstracts}
 %    \begin{macrocode}
 \newenvironment{translatedabstract}[1]{\Collect@Body
   \@savetranslatedabstract\@mktranslatedabstract{#1}}{}
@@ -3553,7 +3553,7 @@
 \or % sigchi-a
   \urlstyle{sf}
 \or % acmengage
-\or % acmcp  
+\or % acmcp
 \fi
 \AtEndPreamble{%
   \if@ACM@urlbreakonhyphens
@@ -5178,7 +5178,7 @@
   {\@specialsection{\keywordsname}%
     \noindent#2\par}\egroup}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{\@titlenotes}
@@ -5436,7 +5436,7 @@
 \def\@acmBadgeL{}
 %    \end{macrocode}
 % \end{macro}
-% 
+%
 % \begin{macro}{\acmBadgeR}
 % \changes{v1.06}{2016/05/01}{Added macro}
 % \changes{v1.89}{2022/12/27}{Redefined macro}
@@ -5691,13 +5691,13 @@
   \relax % Research
      \colorlet{@ACM@Article@color}{ACMBlue}%
   \or % Review
-     \colorlet{@ACM@Article@color}{ACMOrange}%     
+     \colorlet{@ACM@Article@color}{ACMOrange}%
   \or % Discussion
-     \colorlet{@ACM@Article@color}{ACMGreen}%     
+     \colorlet{@ACM@Article@color}{ACMGreen}%
   \or % Invited
-     \colorlet{@ACM@Article@color}{ACMPurple}%     
+     \colorlet{@ACM@Article@color}{ACMPurple}%
   \or % Position
-     \colorlet{@ACM@Article@color}{ACMRed}%     
+     \colorlet{@ACM@Article@color}{ACMRed}%
   \fi
 }{%
  \ClassError{\@classname}{Article Type must be Research, Review,\MessageBreak
@@ -5707,7 +5707,7 @@
 \acmArticleType{Research}%
 \fi
  %    \end{macrocode}
-% 
+%
 % \end{macro}
 % \begin{macro}{\@ACM@color@frame}
 % \changes{v1.87}{2022/08/13}{Introduced macro}
@@ -5721,7 +5721,7 @@
     -6.5pc\relax\FrameRestore}}{\zsaveposy{@ACM@acmcpframe@y}%
   \endMakeFramed}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{\acmCodeDataLink}
@@ -5737,7 +5737,7 @@
   \fi}
 \def\@acmCodeDataLink{}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{\acmContributions}
@@ -5756,11 +5756,11 @@
 %    \begin{macrocode}
 \let\acmDataLink\acmCodeLink
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 %
-% 
+%
 %\subsection{Concepts system}
 %\label{sec:concepts}
 %
@@ -5960,7 +5960,7 @@
   \def\ACM@cc@type{#2}}
 \setcctype{by}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{\@copyrightowner}
@@ -5992,12 +5992,12 @@
   Copyright held by the owner/author(s). Publication rights licensed to
   ACM\@.
   \or % licensedcagov
-  Copyright held by the owner/author(s). 
+  Copyright held by the owner/author(s).
   \or %licensedcagovmixed
   Copyright held by the owner/author(s). Publication rights licensed to
   ACM\@.
   \or % othergov
-  Copyright held by the owner/author(s). 
+  Copyright held by the owner/author(s).
   \or % licensedothergov
   Copyright held by the owner/author(s). Publication rights licensed to
   ACM\@.
@@ -6028,7 +6028,7 @@
 % \changes{v1.87}{2022/07/30}{Added macro}
 % \changes{v2.00}{2023/10/22}{Moved to warning}
 % \changes{v2.09}{2024/08/25}{Deleted macro}
-% This macro is no longer needed due to the change in ACM policy.  
+% This macro is no longer needed due to the change in ACM policy.
 % \end{macro}
 %
 % \begin{macro}{\@copyrightpermission}
@@ -6055,7 +6055,7 @@
    others than ACM must be honored. Abstracting with credit is
    permitted. To copy otherwise, or republish, to post on servers or
    to redistribute to lists, requires prior specific permission
-   and\hspace*{.5pt}/or 
+   and\hspace*{.5pt}/or
    a fee. Request permissions from permissions@acm.org.
   \or % acmlicensed
    Permission to make digital or hard copies of all or part of this
@@ -6067,7 +6067,7 @@
    is permitted. To copy otherwise, or republish, to post on servers
    or to redistribute to lists, requires prior specific permission
    and\hspace*{.5pt}/or a fee. Request permissions from
-   permissions@acm.org. 
+   permissions@acm.org.
   \or % rightsretained
    Permission to make digital or hard copies of all or part of this
    work for personal or classroom use is granted without fee provided
@@ -6075,21 +6075,21 @@
    advantage and that copies bear this notice and the full citation on
    the first page. Copyrights for third-party components of this work
    must be honored. For all other uses, contact the
-   owner\hspace*{.5pt}/author(s). 
+   owner\hspace*{.5pt}/author(s).
   \or % usgov
    This paper is authored by an employee(s) of the United States
    Government and is in the public domain. Non-exclusive copying or
    redistribution is allowed, provided that the article citation is
    given and the authors and agency are clearly identified as its
    source. Request permissions from
-   owner\hspace*{.5pt}/author(s). 
+   owner\hspace*{.5pt}/author(s).
   \or % usgovmixed
    ACM acknowledges that this contribution was authored or co-authored
    by an employee, contractor, or affiliate of the United States
    government. As such, the United States government retains a
    nonexclusive, royalty-free right to publish or reproduce this
    article, or to allow others to do so, for government purposes
-   only. Request permissions from owner\hspace*{.5pt}/author(s). 
+   only. Request permissions from owner\hspace*{.5pt}/author(s).
   \or % cagov
    This article was authored by employees of the Government of
    Canada. As such, the Canadian government retains all interest in
@@ -6103,7 +6103,7 @@
    owned by others than the Canadian Government must be honored. To
    copy otherwise, distribute, republish, or post, requires prior
    specific permission and/or a fee. Request permissions from
-   owner\hspace*{.5pt}/author(s). 
+   owner\hspace*{.5pt}/author(s).
   \or % cagovmixed
    ACM acknowledges that this contribution was co-authored by an
    affiliate of the national government of Canada. As such, the Crown
@@ -6115,7 +6115,7 @@
    page. Copyrights for components of this work owned by others than
    ACM must be honored. To copy otherwise, distribute, republish, or
    post, requires prior specific permission and/or a fee. Request
-   permissions from owner\hspace*{.5pt}/author(s). 
+   permissions from owner\hspace*{.5pt}/author(s).
   \or % licensedusgovmixed
    Publication rights licensed to ACM\@. ACM acknowledges that this
    contribution was authored or co-authored by an employee, contractor
@@ -6123,7 +6123,7 @@
    Government retains a nonexclusive, royalty-free right to publish or
    reproduce this article, or to allow others to do so, for Government
    purposes only. Request permissions from
-   owner\hspace*{.5pt}/author(s). 
+   owner\hspace*{.5pt}/author(s).
   \or % licensedcagov
    This article was authored by employees of the Government of
    Canada. As such, the Canadian government retains all interest in
@@ -6137,7 +6137,7 @@
    owned by others than the Canadian Government must be honored. To
    copy otherwise, distribute, republish, or post, requires prior
    specific permission and/or a fee. Request permissions from
-   owner\hspace*{.5pt}/author(s). 
+   owner\hspace*{.5pt}/author(s).
   \or % licensedcagovmixed
    Publication rights licensed to ACM. ACM acknowledges that this
    contribution was authored or co-authored by an employee, contractor
@@ -6145,21 +6145,21 @@
    Government retains a nonexclusive, royalty-free right to publish or
    reproduce this article, or to allow others to do so, for Government
    purposes only. Request permissions from
-   owner\hspace*{.5pt}/author(s). 
+   owner\hspace*{.5pt}/author(s).
   \or % othergov
    ACM acknowledges that this contribution was authored or co-authored
    by an employee, contractor or affiliate of a national
    government. As such, the Government retains a nonexclusive,
    royalty-free right to publish or reproduce this article, or to
    allow others to do so, for Government purposes only. Request
-   permissions from owner\hspace*{.5pt}/author(s). 
+   permissions from owner\hspace*{.5pt}/author(s).
   \or % licensedothergov
    Publication rights licensed to ACM\@. ACM acknowledges that this
    contribution was authored or co-authored by an employee, contractor
    or affiliate of a national government. As such, the Government
    retains a nonexclusive, royalty-free right to publish or reproduce
    this article, or to allow others to do so, for Government purposes
-   only. Request permissions from owner\hspace*{.5pt}/author(s). 
+   only. Request permissions from owner\hspace*{.5pt}/author(s).
  \or % iw3c2w3
    This paper is published under the Creative Commons Attribution~4.0
    International (CC-BY~4.0) license. Authors reserve their rights to
@@ -6258,7 +6258,7 @@
 %
 % \end{macro}
 %
-% 
+%
 %\subsection{Maketitle hook}
 %\label{sec:hook}
 %
@@ -6294,7 +6294,7 @@
 %    \begin{macrocode}
 \def\@acmengagemetadata{}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \begin{macro}{\setengagemetadata}
@@ -6305,7 +6305,7 @@
   \g@addto@macro{\@acmengagemetadata}{%
     \@setengagemetadata{#1}{#2}}}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 % \subsection{Typesetting top matter}
@@ -6434,7 +6434,7 @@
        \if@ACM@journal@bibstrip\else % Print the conference information
          \if@ACM@engage
             {\itshape \@acmBooktitle, \@acmYear.}\par
-         \else 
+         \else
          {\itshape \acmConference@shortname, \acmConference@venue}\par
          \fi
        \fi
@@ -6442,7 +6442,7 @@
     \if@printcopyright
       \copyright\ \@copyrightyear\ \@copyrightowner\\
     \else
-      \ifx\@copyrightyear\@empty\else  
+      \ifx\@copyrightyear\@empty\else
         \@copyrightyear.\
       \fi
     \fi
@@ -6478,7 +6478,7 @@
     \fi
     \fi
   \endgroup
-  \if@ACM@engage\@typesetengagemetadata\fi  
+  \if@ACM@engage\@typesetengagemetadata\fi
   \setcounter{footnote}{0}%
   \@mkabstract
   \ifx\@translatedabstracts\@empty\else
@@ -6526,7 +6526,7 @@
   \if@ACM@acmcp
     \set@ACM@acmcpbox
     \AtEndDocument{\end@ACM@color@frame}%
-    \@ACM@color@frame  
+    \@ACM@color@frame
   \fi
 }
 %    \end{macrocode}
@@ -6553,7 +6553,7 @@
       \@tempdima=\dimexpr\zposy{@ACM@acmcpbox@y}sp -
       \zposy{@ACM@acmcpframe@y}sp+0.3\FrameSep+
       \@ACM@acmcp@delta\relax
-      \ifdim\@tempdima>0pt\relax         
+      \ifdim\@tempdima>0pt\relax
          \vspace*{\@tempdima}%
          \protected@write\@auxout{}%
          {\string\global\@ACM@acmcp@delta=\the\@tempdima\relax}%
@@ -6574,7 +6574,7 @@
   }
 \egroup}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 %
@@ -6630,7 +6630,7 @@
 % \changes{1.85}{2022/05/08}{Added: acmengage}
 % \changes{1.89}{2022/12/27}{Moved badges to top header}
 % The printing of top matter starts a new page and uses the given
-%   title box.  
+%   title box.
 %
 % Note that if there are too many authors, |\mktitle@bx| might
 % overflow the page.  Therefore we start with checking this and if
@@ -6678,7 +6678,7 @@
   \or % acmengage
     \twocolumn[\box\mktitle@bx]%
   \or % acmcp
-     \box\mktitle@bx\par  
+     \box\mktitle@bx\par
   \fi
 }
 %    \end{macrocode}
@@ -6829,9 +6829,9 @@
 % \changes{v1.06}{2016/05/01}{Made more generic}
 % \changes{v1.06}{2016/05/01}{Added processing badges}
 % \changes{v1.83}{2022/02/20}{Added \cs{translatedtitle} and
-% \cs{translatedsubtitle}} 
+% \cs{translatedsubtitle}}
 % \changes{v1.89}{2022/12/27}{Moved badges to top header}
-%   The version of \cs{@mktitle} for SIG proceedings.  
+%   The version of \cs{@mktitle} for SIG proceedings.
 %    \begin{macrocode}
 \def\@mktitle@iii{\hsize=\textwidth
     \setbox\mktitle@bx=\vbox{\@titlefont\centering
@@ -6851,7 +6851,7 @@
 % \begin{macro}{\@mktitle@iv}
 % \changes{v1.06}{2016/05/01}{Made more generic}
 % \changes{v1.83}{2022/02/20}{Added \cs{translatedtitle} and
-% \cs{translatedsubtitle}} 
+% \cs{translatedsubtitle}}
 %   The version of \cs{@mktitle} for |sigchi-a|
 %    \begin{macrocode}
 \def\@mktitle@iv{\hsize=\textwidth
@@ -6935,10 +6935,10 @@
 %    \begin{macrocode}
 \def\streetaddress#1{\ClassWarning{\@classname}{ACM no longer collects
   authors' postal addresses.  I am ignoring your street
-  address}\unskip\ignorespaces} 
+  address}\unskip\ignorespaces}
 \def\postcode#1{\ClassWarning{\@classname}{ACM no longer collects
   authors' postal addresses.  I am ignoring your postal
-  code}\unskip\ignorespaces} 
+  code}\unskip\ignorespaces}
 \if@ACM@journal
   \def\position#1{\unskip\ignorespaces}
   \def\institution#1{\global\@ACM@instpresenttrue
@@ -7414,7 +7414,7 @@
   \bgroup
   \def\streetaddress##1{\ClassWarning{\@classname}{ACM no longer collects
   authors' postal addresses.  I am ignoring your street
-  address}\unskip\ignorespaces}% 
+  address}\unskip\ignorespaces}%
   \def\postcode##1{\ClassWarning{\@classname}{ACM no longer collects
   authors' postal addresses.  I am ignoring your postal
   code}\unskip\ignorespaces}%
@@ -7530,7 +7530,7 @@
 %
 % \end{macro}
 %
-% 
+%
 % \begin{macro}{\@mkbibcitation}
 % \changes{v1.17}{2016/07/10}{Changed format for sigs}
 % \changes{v1.17}{2016/07/10}{Added \cs{nobreak}}
@@ -7624,7 +7624,7 @@
   \def\@setengagemetadata##1##2{\par\noindent\textbf{##1} ##2\par}%
   \@acmengagemetadata}
 %    \end{macrocode}
-% 
+%
 % \end{macro}
 %
 %<*tagged>
@@ -8286,7 +8286,7 @@
 % \end{macro}
 %
 % \changes{v2.10}{2024/10/19}{Added tocindent for paragraphs and
-% subparagraphs} 
+% subparagraphs}
 % Amasat does not define tocindents for paragraphs and subparagraphs.
 % Here we add them
 %    \begin{macrocode}
@@ -8328,7 +8328,7 @@
    \setcounter{secnumdepth}{-1}%
 \fi
 %    \end{macrocode}
-% 
+%
 %
 %\subsection{TOC lists}
 %\label{sec:tocs}
