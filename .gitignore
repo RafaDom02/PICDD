@@ -8,3 +8,5 @@ paper/main.synctex.gz
 *.log
 *.out
 *.synctex.gz
+
+main.*
