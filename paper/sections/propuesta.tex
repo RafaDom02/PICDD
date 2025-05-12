@@ -70,4 +70,14 @@ En cuanto a la salida del sistema se contará con:
     \end{itemize}
 \end{itemize}
 
+\subsection{Métodos a utilizar}
 
+Debido a la complejidad del problema, se ha decidido que lo más apropiado es utilizar diferentes modelos robustos, sobre los cuales se llevarán a cabo comparaciones para determinar cuál es el modelo más óptimo trabajando con el retorno de inversión. Hemos seleccionado los siguientes:
+
+\begin{itemize}
+    \item Modelos basados en Gradient Boosting como pueden ser XGboost o LightGMB, que son modelos muy robustos, basados en conjuntos, que nos permiten establecer separaciones en problemas caracterizados por su no linealidad y complejidad.
+    \item Rodom Forest, se trata de otro modelo de conjuntos, también muy robusto, que permite tratar con grandes cantidades de características de entrada.
+    \item Red Neuronal, la cual también nos permite trabajar con conjuntos de características de gran complejidad, incluso si no cuentan con separaciones lineales mediante la utilización de redes neuronales con múltiples capas ocultas.
+\end{itemize}
+
+Debido a que el objetivo del proyecto es tratar de optimizar el ROI del sistema será necesario la creación de una función de pérdida que tenga en cuenta las cuotas de apuesta de cada uno de los partidos que se encuentran en estudio. Nos permitirá no solo predecir con suficiencia el ganador del partido, además nos permitirá encontrar posibles sorpresas. Estas sorpresas se podrán ser identificadas gracias a las variables contextuales introducidas en el proyecto, que van desde el estado de forma, el análisis de sentimiento respecto a cada uno de los equipos, y por otro lado por el descubrimiento de que coinciden las fortalezas de un equipo con las debilidades del otro.
