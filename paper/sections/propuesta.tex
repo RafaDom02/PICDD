@@ -1,3 +1,73 @@
 \section{Propuesta}
 
-Texto de la propuesta.
+El **nombre proyecto** propone la creación de un modelo que no solo prediga los resultados en el contexto de la liga brasileña de fútbol, si no que encuentre posibles sorpresas que supongan un gran beneficio en las apuestas que se están realizando. Para ello, el proyecto se va a centrar en un análisis estadístico que tenga en cuenta las debilidades y fortalezas con la que cuentan cada uno de los equipos y cómo interactúan entre sí unido a un análisis del contexto en el que se encuentran cada uno de los equipos antes de llegar al partido, con el objetivo de optimizar el ROI de las apuestas en un mercado menos optimizado alejado de las grandes ligas europeas de fútbol.
+
+Los principales objetivos del proyecto son:
+
+\begin{enumerate}
+    \item Construir un conjunto de estadísticas avanzadas que permitan la comparación de las debilidades y fortalezas, a partir de las características tanto a nivel de equipo, como a nivel de jugador, dando relevancia a aquellos jugadores a aquellos jugadores que van a participar en el encuentro.
+    \item Utilizar análisis de sentimiento a partir de noticias y opiniones en redes sociales por parte de aficionados para tener información contextual del estado de forma de los equipos, unido a información sobre resultados en partidos previos y disponibilidad de jugadores.
+    \item Construir un modelo de aprendizaje automático que tenga como objetivo predecir los resultados de los encuentros de manera eficiente y aprovechar las características construidas para maximizar el ROI en las apuestas a realizar.
+\end{enumerate}
+
+\subsection{Datasets a utilizar}
+
+Para poder construir el sistema planteado será necesario la utilización de múltiples fuentes de datos para poder cubrir todas sus necesidades.
+
+\begin{enumerate}
+    \item Datos históricos donde se encontrarán los resultados de los diferentes partidos de la liga brasileña de fútbol a lo largo de diferentes temporadas, esto lo podemos encontrar en el portal  https://www.football-data.co.uk/brazil.php, el cual cuenta con resultados de más de 5000 partidos de la liga brasileña comprendidos desde 2012 hasta 2025.
+    \item Datos de cuotas que es posible encontrar en el portal https://football.nowgoal.com/league/4, donde se encuentra información sobre cuotas de apuestas previas de cada uno de los partidos de la liga brasileña desde 2005 hasta 2025 con más de 30 casa de apuestas diferentes que permitirán afinar el ROI.
+    \item Información de características de los jugadores y equipos donde se conocen sus características para poder establecer sus fortalezas y debilidades para poder ajustar el enfrentamiento. Esta información se puede obtener en los siguientes portales https://datamb.football/ y  https://statsbomb.com/.  
+    \item Información contextual previos al partido respecto al estado del equipo que puede ser capturado mediante la realización de análisis de sentimiento de noticias y opiniones en redes sociales como puede ser x.com previas a cada uno de los encuentros. Adicionalmente, se puede encontrar información sobre alineaciones y jugadores sancionados y lesionados en diferentes aplicaciones como sofascore.com
+\end{enumerate}
+
+La obtención de los datos históricos si que es posible obtener la información ya estructurada, pero en cuanto a las características de los jugadores y equipos, las cuotas de los partidos y la información contextual es necesario llevar a cabo todo un proceso de recopilación de los datos mediante robustos modelos de web scraping.
+
+\subsection{atributos a inferir}
+
+Los principales atributos de entrada del sistema los podemos dividir en las siguientes categorías:
+
+\begin{enumerate}
+    \item Características estándar:
+        \begin{itemize}
+            \item Cuotas prepartido respecto a la victoria local, victoria visitante o el empate.
+            \item Ventaja de campo: Cuál de los equipos está jugando en su campo.
+        \end{itemize}
+    \item Rendimiento del equipo tanto de manera global como específico a enfrentamientos previos entre equipos y diferenciando entre encuentros como local y visitante.
+    \begin{itemize}
+        \item Estado de forma: Medida que indica el rendimiento que está teniendo el equipo en los partidos previos, donde se le da mayor importancia a los partidos más recientes.
+        \item Momentum: indica la racha que tiene el equipo, ya sea de victorias, derrotas o empates y la duración de la misma.
+    \end{itemize}
+    \item Características contextuales:
+    \begin{itemize}
+        \item Puntuación del sentimiento prepartido: Una puntuación derivada del análisis de sentimiento de las opiniones tanto de las noticias como de redes sociales.
+        \item Jugadores disponibles: Indicando la presencia o ausencia de jugadores debido a lesiones, sanciones u otras causas.
+        \item Jugadores titulares: Jugadores que van a empezar, o se predice que van a empezar, el partido y van a participar en la mayor parte del encuentro y por tanto van a tener una gran influencia en el resultado.
+    \end{itemize}
+    \item Características avanzadas: Donde se ven reflejadas las fortalezas y debilidades de cada uno de los equipos, que han sido construido a partir de las características generales del equipo unido a las características individuales de los jugadores que van a ser o se predice que van a ser titulares.
+    \begin{itemize}
+        \item Goles esperados: tanto marcados como recibidos.
+        \item Presión: Fortaleza en la presión cuando no se cuenta con la posesión del balón.
+        \item Precisión: de pases en defensa: Habilidad a la hora de realizar pases en momentos de presión.
+        \item Duelos aéreos: tanto ofensivos como defensivos.
+        \item Duelos terrestres: tanto ofensivos como defensivos.
+        \item Habilidad de contraataque: Habilidad de marcar goles o no recibir goles provenientes de contraataque.
+        \item Habilidad juego posesión: Habilidad de marcar goles o no recibir goles a partir juego de posesión.
+        \item 
+    \end{itemize}
+\end{enumerate}
+
+Será necesario un arduo proceso de preprocesamiento de los datos, especialmente, por la necesidad de llevar a cabo un análisis de sentimiento para poder construir la puntuación de sentimientos prepartido, así como de la construcción de las características avanzadas, ya que dependen de los jugadores que van a ser partícipes desde el principio del encuentro.
+
+En cuanto a la salida del sistema se contará con:
+
+\begin{itemize}
+    \item Probabilidades de cada uno de los 3 posibles resultados:
+    \begin{itemize}
+        \item Probabilidad de que el equipo de casa gane.
+        \item Probabilidad de que el partido finalice en empate.
+        \item Probabilidad de victoria del equipo visitante.
+    \end{itemize}
+\end{itemize}
+
+
