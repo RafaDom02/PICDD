@@ -5,5 +5,6 @@ La predicción de resultados en el fútbol profesional ha empleado significativa
 Una aproximación fundamental para medir la capacidad competitiva de los equipos se basa en sistemas de calificación (rating systems) que buscan condensar su fortaleza general.
 
 \begin{itemize}
-    \item Métodos como el Elo rating, PageRank y pi-rating han sido herramientas recurrentes tanto en fútbol \cite{maclean_review_2022}, \cite{owenDynamicBayesianForecasting2011}
+    \item Métodos de valoraciones o ranking como el Elo rating, PageRank y pi-rating han sido herramientas recurrentes tanto en fútbol \cite{macleanReviewNFL20192022, owenDynamicBayesianForecasting2011} como en otros deportes como el baloncesto \cite{lampisPredictionsEuropeanBasketball2023}. Estos sistemas actualizan las valoraciones de los equipos tras cada partido, considerando la fortaleza del oponente y el resultado.
+    \item Con el objetivo de reflejar más fielmente el estado de forma actual del equipo, se han desarrollado extensiones. Por ejemplo, \cite{angeliniWeightedEloRating2022} introducen el Weighted Elo (WElo), que otorga mayor peso a los resultados recientes o a la contundencia del marcador, buscando así reflejar mejor el estado de forma actual, que es una manifestación temporal de la fortaleza del equipo. En esta misma línea, los modelos con "dynamic ratings" \cite{holmesForecastingFootballMatch2024} o los basados en el ranking Poisson para estimar parámetros de habilidad actual \cite{leyRankingSoccerTeams2019} también persiguen esta adaptación de calificación dinámica.
 \end{itemize}
