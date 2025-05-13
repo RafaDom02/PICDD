@@ -1,9 +1,29 @@
 \section{Estado del Arte}
 
+La predicción de resultados en el fútbol, con el fin de aplicarla al mercado de apuestas deportivas, ha evolucionado significativamente.
+Los modelos pioneros se centraron en distribuciones estadísticas de goles, como el modelo de Poisson, para estimar la capacidad ofensiva y defensiva de los equipos, considerando a menudo la ventaja de campo \cite{Fontanella2020Visual}.
+Posteriormente, enfoques como el modelo "Dolores" han integrado ratings dinámicos de equipos, derivados de un amplio histórico de resultados, como entrada para Redes Bayesianas Híbridas capaces de inferir las probabilidades del resultado 1X2, demostrando una considerable capacidad de generalización a través de múltiples ligas internacionales \cite{Constantinou2019Dolores}.
+Otros trabajos han adaptado estos principios a mercados específicos como el Hándicap Asiático, derivando goles esperados a partir de cuotas y modelos de referencia como el de Dixon y Coles \cite{Chen2019Cluster},
+mientras que la aplicación de metodologías estadísticas básicas, como la regresión por mínimos cuadrados para la predicción de diferencia de puntos en baloncesto \cite{Lu2019NBAPointDiff}, ha sugerido su aplicabilidad conceptual al fútbol. \\
 
-Aquí lo divimos en partes así cada uno pone lo suyo.
+Con el incremento en la disponibilidad de datos, el Machine Learning (ML) se ha establecido como un paradigma dominante.
+Se han evaluado diversos algoritmos, incluyendo k-NN, LogitBoost, SVM, Random Forest y, con particular éxito, modelos de Gradient Boosting como CatBoost, que han demostrado alta precisión, especialmente cuando se abordan desafíos como el desequilibrio de clases (mediante técnicas como SMOTE) y se realiza una selección de características cuidadosa \cite{Malamatinos2022GreekLeague}.
+La investigación continúa explorando la utilidad de diversos enfoques de ML \cite{Jaeyalakshmi2023PredictingOutcomeML} y la mejora continua de modelos estadísticos fundamentales \cite{Loukas2024PoissonRegression}.
+Las Deep Neural Networks (DNNs), combinadas con técnicas de selección de características como la Información Mutua (MI), también han mostrado ser prometedoras para capturar relaciones complejas en los datos \cite{Tammouch2024BettingML}.
+La capacidad de los modelos para actualizar dinámicamente la fortaleza de los equipos, por ejemplo, a través de la evaluación de la habilidad de los jugadores \cite{Holmes2023PlayerRating}, es un factor clave que se ha correlacionado con la generación de retornos positivos en apuestas, resaltando la importancia de incorporar datos granulares y actualizados. \\
 
+Un diferenciador crucial en la investigación orientada a las apuestas es el foco en la rentabilidad (ROI) por encima de la mera precisión predictiva.
+La literatura advierte que una alta precisión no implica necesariamente un ROI positivo, siendo fundamental que las estrategias de apuestas consideren esta disociación \cite{Wunderlinch2019AreBettingReturnsUseful}.
+El análisis de la eficiencia del mercado de apuestas es, por tanto, un tema central. Se investiga cómo la información se refleja en las cuotas y las posibles ineficiencias, como el conocido sesgo favorito-no favorito \cite{Angelini2021InformationalEfficiency, Hegarti2024TaleOfTwoMarkets}.
+Estas ineficiencias pueden originarse por la reacción tardía del mercado a información nueva y significativa, como cambios de entrenador \cite{Bernardo2018SemiStrong} o lesiones de jugadores clave \cite{Fisher2024PricingResponse}, o por sobrerreacciones a las rachas de resultados de los equipos \cite{Wheatcroft2020ProfitingOverreaction}. Esta última observación sugiere que factores contextuales que influyen en la percepción del estado de forma o "moral" de un equipo podrían ser explotables si se modelan adecuadamente. \\
 
-\subsection{Cuantificación de Fortalezas, Debilidades y Métricas de Rendimiento para la Predicción de Resultados.}
+La selección e ingeniería de características se reconoce universalmente como una etapa crítica para el éxito de los modelos predictivos.
+Técnicas como la Selección Secuencial de Características (SFS), Información Mutua (MI) y Análisis de Componentes Principales (PCA) son comúnmente empleadas para optimizar el conjunto de predictores \cite{Tammouch2024BettingML, Rodrigues2022FootballPredictionML}.
+El uso de metodologías avanzadas como la Programación Genética, aunque más explorada en otros deportes, también ofrece una vía para la evaluación de la importancia de características y la generación de modelos interpretables, un aspecto deseable en el análisis deportivo \cite{Geng2020SportsGamesGP}.\\
 
-\input{sections/fortalezs_debilidades.tex}
+Si bien la predicción pre-partido es el foco principal de muchos estudios, la investigación en predicción en vivo (in-play) también aporta valiosos insights sobre la dinámica del juego.
+Los modelos Bayesianos dinámicos que se actualizan con información del partido en curso \cite{Zou2020BayesianInPlay}, así como los enfoques basados en aprendizaje por refuerzo \cite{Rahimian2024InGameRL} y aplicaciones a otros deportes como el baloncesto \cite{Song2020RealTimeNBAPredictions}, subrayan el valor de la información contextual y temporal. Esto refuerza la idea de que los factores dinámicos, como la moral del equipo capturada antes del partido, pueden ser altamente relevantes. \\
+
+Finalmente, el contexto específico de la liga es un factor modulador de la predictibilidad que no puede ser ignorado.
+Se ha demostrado que la capacidad de predicción de los modelos varía entre diferentes ligas, y que los modelos entrenados en una liga específica pueden no generalizar óptimamente a otras sin una adaptación o reentrenamiento particular \cite{Malamatinos2022GreekLeague}.
+La estructura competitiva inherente, la calidad de los datos disponibles y la propia eficiencia del mercado de apuestas asociado a cada liga influyen significativamente en el rendimiento y la viabilidad de las estrategias predictivas. Así, el análisis detallado de una liga particular puede revelar patrones y oportunidades que no son evidentes en estudios más generales o en ligas de mayor escrutinio \cite{Beretta2023OptimalAlgorithmTournaments}.
