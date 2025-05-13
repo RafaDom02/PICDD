@@ -14,12 +14,14 @@ Los principales objetivos del proyecto son:
     \item Construir un modelo de aprendizaje automático capaz de predecir los resultados de los encuentros de manera eficiente y aprovechar las características construidas para maximizar el ROI en las apuestas a realizar.
 \end{enumerate}
 
+El proyecto está destinado para apostadores que quieren incrementar su rendimiento, y por tanto benenficios, a la hora de realizar apuestas gracias a las mejoras en cuanto a la predicción y, especialmente, del retorno de inversión (ROI). Por otro lado, también tiene el potencial para ser utilizado por parte de las casas de apuestas, dado que les permitirá poder encontrar posibles apuestas mal calibradas, y por tanto, susceptibles de producir pérdidas no esperadas, especialmente en mercados minoritarios.
+
 \subsection{Datasets a utilizar}
 
 Para poder construir el sistema planteado será necesario la utilización de múltiples fuentes de datos que cubran los distintos aspectos del análisis.
 
 \begin{enumerate}
-    \item \textbf{Datos históricos de partidos:} Se encuentran los resultados de los diferentes partidos de la liga brasileña de fútbol a lo largo de distintas temporadas. Esta lo podemos encontrar en el portal football data \cite{footballData}, que cuenta con resultados de más de 5000 partidos desde la temporada 2012 hasta 2025.
+    \item \textbf{Datos históricos de partidos:} Se encuentran los resultados de los diferentes partidos de la liga brasileña de fútbol a lo largo de distintas temporadas. Esta lo podemos encontrar en el portal football data \cite{footballData} \cite{holmesForecastingFootballMatch2024}, que cuenta con resultados de más de 5000 partidos desde la temporada 2012 hasta 2025.
 
     \item \textbf{Cuotas de apuestas:} Para poder afinar el retorno de inversión (ROI) es necesario contar con información de las cuotas previas a los partidos. Esta información es posible encontrarla en el portal nowgoal \cite{nowgoalOdds}, donde se encuentran cuotas de partidos de la liga brasileña desde 2005 hasta 2025 con más de 30 casa de apuestas distintas.
     
@@ -46,12 +48,14 @@ Los principales atributos de entrada del sistema se dividen en las siguientes ca
     \begin{itemize}
         \item \textbf{Estado de forma:} Medida que indica el rendimiento en los partidos previos, con mayor importancia a los partidos más recientes.
         \item \textbf{Momentum:} indica la racha que tiene el equipo, ya sea de victorias, derrotas o empates y su duración.
+        \item \textbf{Fortaleza del equipo:} Indica como de fuerte es un uquipo relativo a un sistema de elo dinámico.
     \end{itemize}
     \item \textbf{Características contextuales:}
     \begin{itemize}
         \item \textbf{Puntuación del sentimiento prepartido:} Valor derivado del análisis de sentimiento de noticias publicadas por medios especializados y opiniones en redes sociales.
         \item \textbf{Jugadores disponibles:} Presencia o ausencia de jugadores debido a lesiones, sanciones u otras causas.
         \item \textbf{Jugadores titulares:} Jugadores que van a comenzar el partido, o se espera que lo hagan, y por tanto van a tener una gran influencia en el resultado al disputar la moyor parte del encuentro.
+        \item \textbf{tiempo de descanso relativo:}: El tiempo de descanso respecto a partidos previos ponderando la fortaleza de los equipos a los que se ha enfrentado previamente. 
     \end{itemize}
     \item \textbf{Características avanzadas:} Reflejan las fortalezas y debilidades de cada uno de los equipos, construidas a partir de las características generales del equipo unido a las características individuales de los jugadores que van a ser o se predice que van a ser titulares.
     \begin{itemize}
@@ -62,6 +66,7 @@ Los principales atributos de entrada del sistema se dividen en las siguientes ca
         \item \textbf{Duelos terrestres:} Efectividad en dispuestas terrestres, tanto ofensivas como defensivas.
         \item \textbf{Habilidad de contraataque:} Capacidad de generar o parar situaciones de peligro en transiciones.
          \item \textbf{Habilidad juego posesión:} capacidad de generar o parar situaciones de peligro en situaciones de peligro generadas por posesiones largas.
+        \item 
     \end{itemize}
 \end{enumerate}
 
@@ -81,7 +86,7 @@ Estas probabilidades serán combinadas con las cuotas de casas de apuestas con e
 Dada a la complejidad del problema y la naturaleza no lineal de muchos de los atributos, se ha considerado que lo más apropiado es utilizar diferentes modelos de machine learning robustos. Sobre ellos se llevarán a cabo comparaciones de su desempeño y determinar cuál es el modelo que maximiza el retorno de inversión (ROI). Los modelos que han sido seleccionados son los siguientes:
 
 \begin{itemize}
-    \item \textbf{Modelos basados en Gradient Boosting como pueden ser XGboost o LightGMB:} Se tratan de modelos basados en conjuntos, que son modelos muy robustos que presentan buenos rendimientos trabajando con problemas con relaciones no linealeas y de gran dimensionalidad.
+    \item \textbf{Modelos basados en Gradient Boosting como pueden ser XGboost, LightGMB o CatBoost:} Se tratan de modelos basados en conjuntos, que son modelos muy robustos que presentan buenos rendimientos trabajando con problemas con relaciones no linealeas y de gran dimensionalidad.
     \item \textbf{Rodom Forest:} Modelo de conjuntos de árboles de decisión, también muy robusto, que permite tratar con grandes cantidades de características de entrada.
     \item \textbf{Red Neuronal:} Se utilizarán redes neuronales profundas, por su capacidad para tratar con conjuntos de características de gran complejidad, incluso si no cuentan con relaciones altamente no lineales.
 \end{itemize}
@@ -90,4 +95,3 @@ Dada a la complejidad del problema y la naturaleza no lineal de muchos de los at
 Como el objetivo principal del proyecto no es solo predecir el resultado de cada uno de los encuentros, sino optimizar el ROI, será necesario la creación de una función de pérdida que tenga en cuenta las cuotas de apuesta de cada uno de los partidos. De esta manera, el sistema no solo permitirá predecir con suficiencia el resultado del partido, sino que también podrá identificar partidos con un alto potencial de rentabilidad.
 
 Estos resultados con gran potencial se pueden asociar a resultados menos esperados. Su identificación será posible gracias a las variables contextuales introducidas en el proyecto, tales como el estado de forma, el análisis de sentimiento respecto a cada uno de los equipos, y por otro lado, por el descubrimiento de enfrentamientos favorables al equipo a priori más débil, gracias a la identificación de las fortalezas y debilidades.
-
