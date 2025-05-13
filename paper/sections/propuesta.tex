@@ -1,83 +1,93 @@
 \section{Propuesta}
 
-El **nombre proyecto** propone la creación de un modelo que no solo prediga los resultados en el contexto de la liga brasileña de fútbol, si no que encuentre posibles sorpresas que supongan un gran beneficio en las apuestas que se están realizando. Para ello, el proyecto se va a centrar en un análisis estadístico que tenga en cuenta las debilidades y fortalezas con la que cuentan cada uno de los equipos y cómo interactúan entre sí unido a un análisis del contexto en el que se encuentran cada uno de los equipos antes de llegar al partido, con el objetivo de optimizar el ROI de las apuestas en un mercado menos optimizado alejado de las grandes ligas europeas de fútbol.
+El **nombre proyecto** tiene como objetivo el desarrollo de un modelo que combine la predicción de resultados deportivos con el descubrimiento de posibles sorpresas que supongan una alta rentabilidad en el mercado de apuestas en el ámbito de la liga brasileña de fútbol. Para ello, el proyecto se centrará en realizar un análisis estadístico exhaustivo que tenga en cuenta las debilidades y fortalezas y un análisis del contexto de cada uno de los equipos que se encuentran implicados en cada partido en específico.
+
+Se realizará una combinación de un análisis para cada uno de los equipos de rendimiento basado en las cualidades tanto de los equipos de manera global como de los jugadores de manera individual para extraer las fortalezas y debilidades unido al contexto derivado de tanto el análisis de sentimiento de noticias y redes sociales como de disponibilidad de jugadores.
+
+Este modelo tiene como principal objetivo de optimizar el retorno de inversión (ROI) en un mercado de apuestas menos eficiente respecto a las grandes ligas europeas.
 
 Los principales objetivos del proyecto son:
 
 \begin{enumerate}
-    \item Construir un conjunto de estadísticas avanzadas que permitan la comparación de las debilidades y fortalezas, a partir de las características tanto a nivel de equipo, como a nivel de jugador, dando relevancia a aquellos jugadores a aquellos jugadores que van a participar en el encuentro.
-    \item Utilizar análisis de sentimiento a partir de noticias y opiniones en redes sociales por parte de aficionados para tener información contextual del estado de forma de los equipos, unido a información sobre resultados en partidos previos y disponibilidad de jugadores.
-    \item Construir un modelo de aprendizaje automático que tenga como objetivo predecir los resultados de los encuentros de manera eficiente y aprovechar las características construidas para maximizar el ROI en las apuestas a realizar.
+    \item Construir un conjunto de estadísticas avanzadas que permitan la comparación de las debilidades y fortalezas, a partir de las características tanto a colectivas como individuales, dando una mayor relevancia a aquellos jugadores que van a participarán de inicio en el encuentro.
+    \item Incorporar análisis de sentimiento a partir de noticias y opiniones en redes sociales por parte de aficionados y medios especializados, para tener información contextual del estado de forma de los equipos, resultados en partidos previos y disponibilidad de jugadores.
+    \item Construir un modelo de aprendizaje automático capaz de predecir los resultados de los encuentros de manera eficiente y aprovechar las características construidas para maximizar el ROI en las apuestas a realizar.
 \end{enumerate}
 
 \subsection{Datasets a utilizar}
 
-Para poder construir el sistema planteado será necesario la utilización de múltiples fuentes de datos para poder cubrir todas sus necesidades.
+Para poder construir el sistema planteado será necesario la utilización de múltiples fuentes de datos que cubran los distintos aspectos del análisis.
 
 \begin{enumerate}
-    \item Datos históricos donde se encontrarán los resultados de los diferentes partidos de la liga brasileña de fútbol a lo largo de diferentes temporadas, esto lo podemos encontrar en el portal  https://www.football-data.co.uk/brazil.php, el cual cuenta con resultados de más de 5000 partidos de la liga brasileña comprendidos desde 2012 hasta 2025.
-    \item Datos de cuotas que es posible encontrar en el portal https://football.nowgoal.com/league/4, donde se encuentra información sobre cuotas de apuestas previas de cada uno de los partidos de la liga brasileña desde 2005 hasta 2025 con más de 30 casa de apuestas diferentes que permitirán afinar el ROI.
-    \item Información de características de los jugadores y equipos donde se conocen sus características para poder establecer sus fortalezas y debilidades para poder ajustar el enfrentamiento. Esta información se puede obtener en los siguientes portales https://datamb.football/ y  https://statsbomb.com/.  
-    \item Información contextual previos al partido respecto al estado del equipo que puede ser capturado mediante la realización de análisis de sentimiento de noticias y opiniones en redes sociales como puede ser x.com previas a cada uno de los encuentros. Adicionalmente, se puede encontrar información sobre alineaciones y jugadores sancionados y lesionados en diferentes aplicaciones como sofascore.com
+    \item \textbf{Datos históricos de partidos:} Se encuentran los resultados de los diferentes partidos de la liga brasileña de fútbol a lo largo de distintas temporadas. Esta lo podemos encontrar en el portal football data \cite{footballData}, que cuenta con resultados de más de 5000 partidos desde la temporada 2012 hasta 2025.
+
+    \item \textbf{Cuotas de apuestas:} Para poder afinar el retorno de inversión (ROI) es necesario contar con información de las cuotas previas a los partidos. Esta información es posible encontrarla en el portal nowgoal \cite{nowgoalOdds}, donde se encuentran cuotas de partidos de la liga brasileña desde 2005 hasta 2025 con más de 30 casa de apuestas distintas.
+    
+    \item \textbf{Características de los jugadores y equipos:} Se emplerán datos con información detallada relativos a características técnicas, físicas y físicas tanto de equipos como de jugadores. Estas características harán posible definir las fortalezas y debilidades para poder ajustar el enfrentamiento. Esta información se puede obtener en los siguientes portales datamb \cite{datamb} y statsbomb \cite{statsbomb}.
+    \item \textbf{Información contextual:} Con el objetivo de obtener información del estado del equipo se analizarán noticas deportivas de medios especializados y opiniones en redes sociales previas a los encuentros, especialmente del portal X \cite{twitter}, mediante el uso de análisis de sentimientos. Adicionalmente, se completará esta información con detalles sobre alineaciones, sanciones y lesiones en plataformas como sofascore \cite{sofascore}.
 \end{enumerate}
 
-La obtención de los datos históricos si que es posible obtener la información ya estructurada, pero en cuanto a las características de los jugadores y equipos, las cuotas de los partidos y la información contextual es necesario llevar a cabo todo un proceso de recopilación de los datos mediante robustos modelos de web scraping.
+
+La información relativa a cuotas de casas de apuestas, características de jugadores y equipos e información contextual no se encuentra disponible de manera estructurada en un conjunto de datos y por tanto será necesario desarrollar una serie de pipelines de recolección de dichos datos mediante procesos de web scraping. 
+
+Asimismo, la diversidad y heterogeneidad de las fuentes de datos empleadas implica la necesidad del desarrollo de un arduo proceso de limpieza y transformación de datos previo para poder construir un sistema robusto, confiable y eficiente. 
 
 \subsection{atributos a inferir}
 
-Los principales atributos de entrada del sistema los podemos dividir en las siguientes categorías:
+Los principales atributos de entrada del sistema se dividen en las siguientes categorías:
 
 \begin{enumerate}
-    \item Características estándar:
+    \item \textbf{Características estándar:}
         \begin{itemize}
-            \item Cuotas prepartido respecto a la victoria local, victoria visitante o el empate.
-            \item Ventaja de campo: Cuál de los equipos está jugando en su campo.
+            \item \textbf{Cuotas prepartido:} Valores ofrecidos por la casas de apuestas respecto a la victoria local, victoria visitante o el empate.
+            \item \textbf{Ventaja de campo:} Indica cuál de los equipos está jugando en su campo, lo cual puede tener gran influencia en los resultados.
         \end{itemize}
-    \item Rendimiento del equipo tanto de manera global como específico a enfrentamientos previos entre equipos y diferenciando entre encuentros como local y visitante.
+    \item \textbf{Rendimiento del equipo:} Incluyendo información tanto a nivel global como específico, enfrentamientos previos entre equipos y diferenciando entre encuentros como local y visitante.
     \begin{itemize}
-        \item Estado de forma: Medida que indica el rendimiento que está teniendo el equipo en los partidos previos, donde se le da mayor importancia a los partidos más recientes.
-        \item Momentum: indica la racha que tiene el equipo, ya sea de victorias, derrotas o empates y la duración de la misma.
+        \item \textbf{Estado de forma:} Medida que indica el rendimiento en los partidos previos, con mayor importancia a los partidos más recientes.
+        \item \textbf{Momentum:} indica la racha que tiene el equipo, ya sea de victorias, derrotas o empates y su duración.
     \end{itemize}
-    \item Características contextuales:
+    \item \textbf{Características contextuales:}
     \begin{itemize}
-        \item Puntuación del sentimiento prepartido: Una puntuación derivada del análisis de sentimiento de las opiniones tanto de las noticias como de redes sociales.
-        \item Jugadores disponibles: Indicando la presencia o ausencia de jugadores debido a lesiones, sanciones u otras causas.
-        \item Jugadores titulares: Jugadores que van a empezar, o se predice que van a empezar, el partido y van a participar en la mayor parte del encuentro y por tanto van a tener una gran influencia en el resultado.
+        \item \textbf{Puntuación del sentimiento prepartido:} Valor derivado del análisis de sentimiento de noticias publicadas por medios especializados y opiniones en redes sociales.
+        \item \textbf{Jugadores disponibles:} Presencia o ausencia de jugadores debido a lesiones, sanciones u otras causas.
+        \item \textbf{Jugadores titulares:} Jugadores que van a comenzar el partido, o se espera que lo hagan, y por tanto van a tener una gran influencia en el resultado al disputar la moyor parte del encuentro.
     \end{itemize}
-    \item Características avanzadas: Donde se ven reflejadas las fortalezas y debilidades de cada uno de los equipos, que han sido construido a partir de las características generales del equipo unido a las características individuales de los jugadores que van a ser o se predice que van a ser titulares.
+    \item \textbf{Características avanzadas:} Reflejan las fortalezas y debilidades de cada uno de los equipos, construidas a partir de las características generales del equipo unido a las características individuales de los jugadores que van a ser o se predice que van a ser titulares.
     \begin{itemize}
-        \item Goles esperados: tanto marcados como recibidos.
-        \item Presión: Fortaleza en la presión cuando no se cuenta con la posesión del balón.
-        \item Precisión: de pases en defensa: Habilidad a la hora de realizar pases en momentos de presión.
-        \item Duelos aéreos: tanto ofensivos como defensivos.
-        \item Duelos terrestres: tanto ofensivos como defensivos.
-        \item Habilidad de contraataque: Habilidad de marcar goles o no recibir goles provenientes de contraataque.
-        \item Habilidad juego posesión: Habilidad de marcar goles o no recibir goles a partir juego de posesión.
-        \item 
+        \item \textbf{Goles esperados:} Goles esperados a favor y en contra.
+        \item \textbf{Presión:} Capacidad de realizar presión efectiva cuando no se cuenta con la posesión del balón.
+        \item \textbf{Precisión de pases bajo presión:} Habilidad a la hora de realizar pases en momentos comprometidos.
+        \item \textbf{Duelos aéreos:} Efectividad en dispuestas aéreas, tanto ofensivas como defensivas.
+        \item \textbf{Duelos terrestres:} Efectividad en dispuestas terrestres, tanto ofensivas como defensivas.
+        \item \textbf{Habilidad de contraataque:} Capacidad de generar o parar situaciones de peligro en transiciones.
+         \item \textbf{Habilidad juego posesión:} capacidad de generar o parar situaciones de peligro en situaciones de peligro generadas por posesiones largas.
     \end{itemize}
 \end{enumerate}
 
 Será necesario un arduo proceso de preprocesamiento de los datos, especialmente, por la necesidad de llevar a cabo un análisis de sentimiento para poder construir la puntuación de sentimientos prepartido, así como de la construcción de las características avanzadas, ya que dependen de los jugadores que van a ser partícipes desde el principio del encuentro.
 
-En cuanto a la salida del sistema se contará con:
-
+El sistema contará como salida con las probabilidades de obtener cada uno de los tres posibles resultados de un partido:
 \begin{itemize}
-    \item Probabilidades de cada uno de los 3 posibles resultados:
-    \begin{itemize}
-        \item Probabilidad de que el equipo de casa gane.
-        \item Probabilidad de que el partido finalice en empate.
-        \item Probabilidad de victoria del equipo visitante.
-    \end{itemize}
+    \item Probabilidad de victoria del equipo local.
+    \item Probabilidad de empate.
+    \item Probabilidad de victoria del equipo visitante.
 \end{itemize}
+
+Estas probabilidades serán combinadas con las cuotas de casas de apuestas con el fin de detectar oportunidades que supongan maximizar el retorno de inversión (ROI).
 
 \subsection{Métodos a utilizar}
 
-Debido a la complejidad del problema, se ha decidido que lo más apropiado es utilizar diferentes modelos robustos, sobre los cuales se llevarán a cabo comparaciones para determinar cuál es el modelo más óptimo trabajando con el retorno de inversión. Hemos seleccionado los siguientes:
+Dada a la complejidad del problema y la naturaleza no lineal de muchos de los atributos, se ha considerado que lo más apropiado es utilizar diferentes modelos de machine learning robustos. Sobre ellos se llevarán a cabo comparaciones de su desempeño y determinar cuál es el modelo que maximiza el retorno de inversión (ROI). Los modelos que han sido seleccionados son los siguientes:
 
 \begin{itemize}
-    \item Modelos basados en Gradient Boosting como pueden ser XGboost o LightGMB, que son modelos muy robustos, basados en conjuntos, que nos permiten establecer separaciones en problemas caracterizados por su no linealidad y complejidad.
-    \item Rodom Forest, se trata de otro modelo de conjuntos, también muy robusto, que permite tratar con grandes cantidades de características de entrada.
-    \item Red Neuronal, la cual también nos permite trabajar con conjuntos de características de gran complejidad, incluso si no cuentan con separaciones lineales mediante la utilización de redes neuronales con múltiples capas ocultas.
+    \item \textbf{Modelos basados en Gradient Boosting como pueden ser XGboost o LightGMB:} Se tratan de modelos basados en conjuntos, que son modelos muy robustos que presentan buenos rendimientos trabajando con problemas con relaciones no linealeas y de gran dimensionalidad.
+    \item \textbf{Rodom Forest:} Modelo de conjuntos de árboles de decisión, también muy robusto, que permite tratar con grandes cantidades de características de entrada.
+    \item \textbf{Red Neuronal:} Se utilizarán redes neuronales profundas, por su capacidad para tratar con conjuntos de características de gran complejidad, incluso si no cuentan con relaciones altamente no lineales.
 \end{itemize}
 
-Debido a que el objetivo del proyecto es tratar de optimizar el ROI del sistema será necesario la creación de una función de pérdida que tenga en cuenta las cuotas de apuesta de cada uno de los partidos que se encuentran en estudio. Nos permitirá no solo predecir con suficiencia el ganador del partido, además nos permitirá encontrar posibles sorpresas. Estas sorpresas se podrán ser identificadas gracias a las variables contextuales introducidas en el proyecto, que van desde el estado de forma, el análisis de sentimiento respecto a cada uno de los equipos, y por otro lado por el descubrimiento de que coinciden las fortalezas de un equipo con las debilidades del otro.
+
+Como el objetivo principal del proyecto no es solo predecir el resultado de cada uno de los encuentros, sino optimizar el ROI, será necesario la creación de una función de pérdida que tenga en cuenta las cuotas de apuesta de cada uno de los partidos. De esta manera, el sistema no solo permitirá predecir con suficiencia el resultado del partido, sino que también podrá identificar partidos con un alto potencial de rentabilidad.
+
+Estos resultados con gran potencial se pueden asociar a resultados menos esperados. Su identificación será posible gracias a las variables contextuales introducidas en el proyecto, tales como el estado de forma, el análisis de sentimiento respecto a cada uno de los equipos, y por otro lado, por el descubrimiento de enfrentamientos favorables al equipo a priori más débil, gracias a la identificación de las fortalezas y debilidades.
+

@@ -1,3 +1,18 @@
 \section{Diseño de la Experimentación}
 
-Texto del diseño de la experimentación.
+Para evaluar la efectividad del modelo, se va a llevar a cabo una proceso de experimentación riguroso utilizando un amplio conjunto de datos históricos, conformados por más de 10 temporadas del campeonato de fútbol brasileño, comprendidas desde 2012 hasta 2023, que suponen cerca de 4000 partidos. 
+
+La fase de pruebas del modelo se realizará con datos de partidos correspondientes a las temporadas 2024 y 2025, incluyendo partidos ya finalizados y partidos en vivo. Se estima que serán utilizados cerca de 500 partidos. 
+
+Para evaluar el impacto de cada uno de los grupos de características del modelo, se van a realizar pruebas con modelos incrementales, permitiendo medir la contribución de cada tipo de información al rendimiento en cuanto a retorno de inversión.
+
+\begin{itemize}
+    \item \textbf{Modelo base:} Compuesto únicamente por información con las categorías estándar y de rendimiento del equipo, definidas durante la sección correspondiente a la definción de variables a inferir.
+    \item \textbf{Modelo intermedio:} Compuesto por las características del modelo base, a las que se añaden las características contextuales.
+    \item \textbf{Modelo completo:} Cuenta con las características del modelo intermedio y adicionalmente cuenta con las características avanzadas relativas a las fortalezas y debilidades de cada equipo.
+\end{itemize}
+
+
+El gran volumen de datos, tanto de entrenamiento como de pruebas, proporcionará una base sólida para poder construir modelos muy robustos que permitirán obtener resultados significativos. 
+
+La utilización de modelos incrementales no solo permitirá demostrar que el modelo completo desarrollado supera, en cuanto a ROI, a modelos ya experimentados y disponibles en múltiples investigaciones, además será permitirá demostrar la importancia de cada uno de los grupos de características, pudiéndose cuantificar el impacto que tiene en el rendimiento de nuestro sistema las variables contextuales y avanzadas.
