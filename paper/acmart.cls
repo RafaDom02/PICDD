@@ -170,7 +170,7 @@
 \def\ACM@languages{}
 \DeclareOptionX{language}{%
   \ifx\ACM@languages\@empty
-  \gdef\ACM@languages{english}\fi
+  \gdef\ACM@languages{spanish}\fi
   \g@addto@macro\ACM@languages{, #1}}
 \DeclareOptionX{draft}{\PassOptionsToClass{\CurrentOption}{amsart}}
 \DeclareOptionX{*}{\PassOptionsToClass{\CurrentOption}{amsart}}
@@ -445,7 +445,7 @@
     unless are languages are defined. \MessageBreak
     Please choose the languages in \string\documentclass
     \MessageBreak
-    (e.g. \string\documentclass[languages={french, english}]{acmart}),
+    (e.g. \string\documentclass[languages={spanish}]{acmart}),
     \MessageBreak
     or delete the command.}%
   \fi}
